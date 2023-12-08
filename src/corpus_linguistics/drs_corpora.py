@@ -241,7 +241,7 @@ def hashtag_search(text):
     hits = Counter([hit[1:] for hit in hits])
     return hits
 
-def hashtag_counter(documents, savename = "../output_data/hashtags.xlsx"):
+def hashtag_counter(documents, savename = "../../output_data/hashtags.xlsx"):
     ht_fdist = Counter()
     for document in documents:
         hits = hashtag_search(document)
@@ -280,7 +280,7 @@ def compute_concordance(docbin, query, window, nlp):
 
 def generate_html_hits(hits, sample_size = 100, label = "query"):
     html_rows = list()
-    outfile = "../output_data/" + label + "_concordance.html"
+    outfile = "../../output_data/" + label + "_concordance.html"
     if sample_size > len(hits):
         sample_size = len(hits)
     hits = sample(hits, sample_size)
